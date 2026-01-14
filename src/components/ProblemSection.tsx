@@ -1,22 +1,24 @@
+import { AlarmClockOff, Bug, Ghost, PiggyBank } from "lucide-react";
+
 export const ProblemSection = () => {
   const problems = [
     {
-      icon: "💸",
+      icon: PiggyBank,
       title: "Wasted Money",
       description: "Paid 'developers' R15K/₦800K who delivered broken software you can't even use",
     },
     {
-      icon: "⏰",
+      icon: AlarmClockOff,
       title: "Missed Deadlines",
       description: "Project promised in 2 months... still not done after 8 months. Business plans destroyed.",
     },
     {
-      icon: "🐛",
+      icon: Bug,
       title: "Constant Bugs",
       description: "Your app crashes daily. Customers are leaving. Reputation tanking on Google reviews.",
     },
     {
-      icon: "👻",
+      icon: Ghost,
       title: "Vanishing Developers",
       description: "They took your deposit, now don't respond to calls, WhatsApp, or emails",
     },
@@ -49,16 +51,21 @@ export const ProblemSection = () => {
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-12">
-          {problems.map((problem, index) => (
-            <div 
-              key={index}
-              className="bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-primary"
-            >
-              <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{problem.icon}</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-primary">{problem.title}</h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{problem.description}</p>
-            </div>
-          ))}
+          {problems.map((problem, index) => {
+            const IconComponent = problem.icon;
+            return (
+              <div 
+                key={index}
+                className="bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-primary"
+              >
+                <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 text-primary flex">
+                  <IconComponent className="w-12 h-12 sm:w-14 sm:h-14" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-primary">{problem.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{problem.description}</p>
+              </div>
+            );
+          })}
         </div>
 
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mt-12 sm:mt-16">

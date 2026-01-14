@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { scrollToElement } from "@/lib/utils";
+import { Building2, Globe, Lock, Mail, MapPin, MessageCircle, Phone, PhoneCall, ShieldCheck, Star } from "lucide-react";
 
 export const CTASection = () => {
   const handleScrollToForm = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
@@ -27,8 +28,8 @@ export const CTASection = () => {
                   size="lg"
                   className="w-full bg-secondary hover:bg-secondary-dark text-white font-bold text-sm sm:text-base md:text-lg mb-3 sm:mb-4 py-4 sm:py-5 md:py-6"
                 >
-                  <span className="hidden sm:inline">📞 CALL NOW: 0811 872 7306</span>
-                  <span className="sm:hidden">📞 0811 872 7306</span>
+                  <span className="hidden sm:inline"><PhoneCall /> CALL NOW: 0811 872 7306</span>
+                  <span className="sm:hidden"><PhoneCall /> CALL NOW: 0811 872 7306</span>
                 </Button>
               </Link>
               <p className="text-xs sm:text-sm text-white/80 mb-4 sm:mb-6">Mon-Fri, 9AM-6PM SAST</p>
@@ -54,8 +55,8 @@ export const CTASection = () => {
                   size="lg"
                   className="w-full bg-secondary hover:bg-secondary-dark text-white font-bold text-sm sm:text-base md:text-lg mb-3 sm:mb-4 py-4 sm:py-5 md:py-6"
                 >
-                  <span className="hidden sm:inline">📞 CALL NOW: 0811 872 7306</span>
-                  <span className="sm:hidden">📞 0811 872 7306</span>
+                  <span className="hidden sm:inline"><PhoneCall /> CALL NOW: 0811 872 7306</span>
+                  <span className="sm:hidden"><PhoneCall /> CALL NOW: 0811 872 7306</span>
                 </Button>
               </Link>
               <p className="text-xs sm:text-sm text-white/80 mb-4 sm:mb-6">Mon-Fri, 9AM-6PM WAT</p>
@@ -99,23 +100,23 @@ export const CTASection = () => {
             </h4>
             <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-white/90">
               <p className="flex items-start gap-2">
-                <span className="font-semibold">📍</span>
+                <span className="font-semibold"><MapPin /></span>
                 <span>Lagos, Nigeria</span>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold">📞</span>
+                <span className="font-semibold"><Phone /></span>
                 <Link to="tel:+2348118727306">
                   <span>0811 872 7306</span>
                 </Link>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold">📧</span>
+                <span className="font-semibold"><Mail /></span>
                 <Link to="mailto:info@nanocodes.com.ng">
                   <span>info@nanocodes.com.ng</span>
                 </Link>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold">💬</span>
+                <span className="font-semibold"><MessageCircle /></span>
                 <span>WhatsApp available</span>
               </p>
             </div>
@@ -127,21 +128,21 @@ export const CTASection = () => {
             </h4>
             <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-white/90">
               <p className="flex items-start gap-2">
-                <span className="font-semibold">📧</span>
+                <span className="font-semibold"><Mail /></span>
                 <Link to="mailto:info@nanocodes.com.ng">
                   <span>info@nanocodes.com.ng</span>
                 </Link>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold">💬</span>
+                <span className="font-semibold"><MessageCircle /></span>
                 <span>WhatsApp available</span>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold">🌐</span>
+                <span className="font-semibold"><Globe /></span>
                 <span>www.nanocodes.com.ng</span>
               </p>
               <p className="text-secondary font-semibold">
-                📞 Local ZA number coming soon
+                Local ZA number coming soon
               </p>
             </div>
           </div>
@@ -149,11 +150,11 @@ export const CTASection = () => {
 
         {/* Trust Seals */}
         <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm text-white/80">
-          <span>🔒 256-bit SSL Encrypted</span>
-          <span>🇿🇦 CIPC Registered</span>
-          <span>🇳🇬 CAC Registered</span>
-          <span>⭐ 4.9/5 Stars</span>
-          <span>💼 Insured Projects</span>
+          <span className="flex items-center gap-2"><Lock /> 256-bit SSL Encrypted</span>
+          <span className="flex items-center gap-2"><Building2 /> CIPC Registered</span>
+          <span className="flex items-center gap-2"><Building2 /> CAC Registered</span>
+          <span className="flex items-center gap-2"><Star /> 4.9/5 Stars</span>
+          <span className="flex items-center gap-2"><ShieldCheck /> Insured Projects</span>
         </div>
       </div>
     </div>

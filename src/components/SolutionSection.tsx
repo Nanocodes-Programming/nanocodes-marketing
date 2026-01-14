@@ -1,42 +1,44 @@
+import { Trophy, FileText, Code, RefreshCw, ShieldCheck, Zap, Globe2, Briefcase } from "lucide-react";
+
 export const SolutionSection = () => {
   const benefits = [
     {
-      icon: "🏆",
+      icon: Trophy,
       title: "Proven Track Record",
       description: "67+ successful projects across Nigeria & South Africa | 94% client retention | 0% project abandonment",
     },
     {
-      icon: "📋",
+      icon: FileText,
       title: "Fixed-Price, Fixed-Timeline Contracts",
       description: "No surprise costs. No endless delays. We guarantee it in writing with legal contracts.",
     },
     {
-      icon: "👨‍💻",
+      icon: Code,
       title: "Senior Developers Only",
       description: "No juniors experimenting on your project. Average team experience: 7+ years | GitHub verified",
     },
     {
-      icon: "🔄",
+      icon: RefreshCw,
       title: "Agile Development Process",
       description: "See progress every week via live demos. Make changes easily. Stay in complete control.",
     },
     {
-      icon: "🛡️",
+      icon: ShieldCheck,
       title: "Post-Launch Support Included",
       description: "3-6 months FREE support & bug fixes after delivery (not 'extra charges')",
     },
     {
-      icon: "⚡",
+      icon: Zap,
       title: "Modern Tech Stack",
       description: "React, Node.js, Flutter, Python, AWS, Docker – built to scale as you grow",
     },
     {
-      icon: "🌍",
+      icon: Globe2,
       title: "Multi-Currency, Multi-Region",
       description: "We handle payments in both ZAR & NGN. Teams in Lagos & Cape Town for local support.",
     },
     {
-      icon: "💼",
+      icon: Briefcase,
       title: "Legal Protection",
       description: "Written contracts, NDA protection, and source code ownership transferred to you 100%",
     },
@@ -63,16 +65,21 @@ export const SolutionSection = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {benefits.map((benefit, index) => (
-            <div 
-              key={index}
-              className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-secondary"
-            >
-              <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{benefit.icon}</div>
-              <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-secondary">{benefit.title}</h3>
-              <p className="text-white/90 text-xs sm:text-sm leading-relaxed">{benefit.description}</p>
-            </div>
-          ))}
+          {benefits.map((benefit, index) => {
+            const IconComponent = benefit.icon;
+            return (
+              <div 
+                key={index}
+                className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-secondary"
+              >
+                <div className="mb-3 sm:mb-4 text-secondary">
+                  <IconComponent className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-secondary">{benefit.title}</h3>
+                <p className="text-white/90 text-xs sm:text-sm leading-relaxed">{benefit.description}</p>
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-12 sm:mt-16 text-center px-2">

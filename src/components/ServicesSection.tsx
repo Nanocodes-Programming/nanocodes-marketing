@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Button } from "./ui/button";
 import { scrollToElement } from "@/lib/utils";
+import { Smartphone, Globe, Monitor, Palette, Link as LinkIcon, Clock4 } from "lucide-react";
 
 export const ServicesSection = () => {
   const handleScrollToForm = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -10,7 +11,7 @@ export const ServicesSection = () => {
   const services = [
     {
       id: "mobile",
-      icon: "📱",
+      icon: Smartphone,
       title: "Custom Mobile Apps",
       features: [
         "iOS & Android (Native or Cross-platform Flutter)",
@@ -26,7 +27,7 @@ export const ServicesSection = () => {
     },
     {
       id: "web",
-      icon: "🌐",
+      icon: Globe,
       title: "Web Applications",
       features: [
         "SaaS platforms, Admin dashboards, CRM/ERP systems",
@@ -42,7 +43,7 @@ export const ServicesSection = () => {
     },
     {
       id: "website",
-      icon: "💻",
+      icon: Monitor,
       title: "Corporate Websites",
       features: [
         "Modern, fast-loading, SEO-optimized",
@@ -59,7 +60,7 @@ export const ServicesSection = () => {
     },
     {
       id: "design",
-      icon: "🎨",
+      icon: Palette,
       title: "UI/UX Design",
       features: [
         "User research & journey mapping",
@@ -76,7 +77,7 @@ export const ServicesSection = () => {
     },
     {
       id: "integration",
-      icon: "🔗",
+      icon: LinkIcon,
       title: "System Integration",
       features: [
         "Connect existing software systems",
@@ -106,25 +107,32 @@ export const ServicesSection = () => {
 
         <Tabs defaultValue="mobile" className="w-full">
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 sm:gap-2 bg-muted p-1 sm:p-2 h-auto overflow-x-auto">
-            {services.map((service) => (
-              <TabsTrigger
-                key={service.id}
-                value={service.id}
-                className="text-xs sm:text-sm md:text-base py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-white whitespace-nowrap"
-              >
-                <span className="mr-1 sm:mr-2 text-base sm:text-lg">{service.icon}</span>
-                <span className="hidden sm:inline">{service.title}</span>
-              </TabsTrigger>
-            ))}
+            {services.map((service) => {
+              const IconComponent = service.icon;
+              return (
+                <TabsTrigger
+                  key={service.id}
+                  value={service.id}
+                  className="text-xs sm:text-sm md:text-base py-2 sm:py-3 px-1 sm:px-2 data-[state=active]:bg-primary data-[state=active]:text-white whitespace-nowrap"
+                >
+                  <IconComponent className="mr-1 sm:mr-2 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" strokeWidth={1.5} />
+                  <span className="hidden sm:inline">{service.title}</span>
+                </TabsTrigger>
+              );
+            })}
           </TabsList>
 
-          {services.map((service) => (
-            <TabsContent key={service.id} value={service.id} className="mt-4 sm:mt-6 md:mt-8">
-              <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-10 border border-border">
-                <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-6 flex-wrap">
-                  <span className="text-4xl sm:text-5xl md:text-6xl">{service.icon}</span>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary break-words">{service.title}</h3>
-                </div>
+          {services.map((service) => {
+            const IconComponent = service.icon;
+            return (
+              <TabsContent key={service.id} value={service.id} className="mt-4 sm:mt-6 md:mt-8">
+                <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-10 border border-border">
+                  <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-6 flex-wrap">
+                    <div className="text-primary">
+                      <IconComponent className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary break-words">{service.title}</h3>
+                  </div>
 
                 <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                   <div>
@@ -163,7 +171,7 @@ export const ServicesSection = () => {
 
                       <div className="bg-secondary/20 backdrop-blur-sm p-3 sm:p-4 rounded-lg border-2 border-secondary">
                         <div className="flex items-center gap-2">
-                          <span className="text-xl sm:text-2xl">⏱️</span>
+                          <span className="text-xl sm:text-2xl"><Clock4 /></span>
                           <div>
                             <span className="font-bold block text-sm sm:text-base">Timeline</span>
                             <span className="text-xs sm:text-sm text-white/90">{service.timeline}</span>
@@ -183,7 +191,8 @@ export const ServicesSection = () => {
                 </div>
               </div>
             </TabsContent>
-          ))}
+            );
+          })}
         </Tabs>
 
         <div className="mt-8 sm:mt-12 text-center px-4">

@@ -185,13 +185,13 @@ export const LeadForm = () => {
     <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 animate-pulse-glow" id="lead-form">
       <div className="text-center mb-4 sm:mb-6">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">
-          💼 Get FREE Project Assessment
+          Get FREE Project Assessment
         </h3>
         <p className="text-sm sm:text-base text-muted-foreground">
           Worth <span className="font-bold text-secondary">R2,500/₦150K</span>
         </p>
         <div className="mt-2 sm:mt-3 inline-block bg-secondary/10 text-secondary px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-semibold">
-          ⏰ Response time: Under 2 hours
+          Response time: Under 2 hours
         </div>
       </div>
 
